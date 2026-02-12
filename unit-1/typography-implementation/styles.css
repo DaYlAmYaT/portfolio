@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'The Best Font';
+  src: url('./fonts/cs-bargent-font/CsBargentRegularDemo-4nmzW.otf') format('opentype');
+  font-weight: 250;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+    /* colors */
+    --color-primary: black;
+    --color-secondary: rgb(9, 9, 176);
+    --color-alert: rgb(156, 13, 13);
+
+    /* Scale multiplier */
+    --scale-muliplier: 1.333;
+
+    /* Base font size */
+    --font-size-base: 1rem;
+    /* Scaled font sizes */
+    --font-size-sm:  calc(var(--font-size-base) / var(--scale-muliplier));
+    --font-size-md:  var(--font-size-base);
+    --font-size-lg:  clamp(1.25rem, 1.25vw + 1.0rem, 2.0rem);
+    --font-size-xl:  clamp(1.5rem, 1.5vw + 1.25rem, 3.0rem);
+    --font-size-2xl: clamp(2.0rem, 2.5vw + 1.5rem, 3.5rem);
+
+    /* Base line height */
+    --line-height-base: 1.5;
+    /* Scaled line heights */
+    --line-height-tight: calc(var(--line-height-base) / var(--scale-muliplier));
+    --line-height-normal: var(--line-height-base);
+    --line-height-relaxed: calc(var(--line-height-base) * var(--scale-muliplier));
+
+    /* Base space */
+    --space-base: 1.5rem;
+    /* Scaled spaces */
+    --space-xs: calc(var(--space-base) * 0.25);
+    --space-sm: calc(var(--space-base) * 0.50);
+    --space-md: var(--space-base);
+    --space-lg: calc(var(--space-base) * 1.50);
+    --space-xl: calc(var(--space-base) * 2.00);
+}
+
+body {
+    font-family: 'The Best Font', 'Arial Narrow', Arial;
+    max-width: 66ch;
+    text-align: center;
+}
+
+h1 {
+    text-decoration: underline;
+    font-size: var(--font-size-2xl);
+    max-width: 45ch;
+    line-height: var(--line-height-tight);
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+}
+
+h2 {
+    text-decoration: underline;
+    font-size: var(--font-size-xl);
+    max-width: 45ch;
+    line-height: var(--line-height-tight);
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+h3 {
+    text-decoration: underline;
+    font-size: var(--font-size-lg);
+    max-width: 50ch;
+    line-height: var(--line-height-tight);
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+h4 {
+    text-decoration: underline;
+    font-size: var(--font-size-lg);
+    max-width: 50ch;
+    line-height: var(--line-height-tight);
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+}
+
+p, cite {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+}
+
+ul, ol {
+    line-height: var(--line-height-relaxed);
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+}
+
+blockquote p {
+    font-style: italic;
+    text-decoration: underline;
+    margin-bottom: var(--space-sm);
+    color: var(--color-alert);
+}
+
+cite {
+    color: var(--color-secondary)
+}
+
+a {
+    text-decoration: none;
+}
+
+footer p, .small {
+    font-size: var(--font-size-sm);
+}
+
+.card {
+
+}
+
+.lead {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-alert)
+}

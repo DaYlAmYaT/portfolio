@@ -1,0 +1,218 @@
+/**
+ * Product Showcase - Theming System
+ * 
+ * ARCHITECTURE CHOICE:
+ * Choose either CUBE CSS or BEM for organizing your CSS.
+ * Document your choice and follow it consistently throughout.
+ * 
+ * CUBE CSS approach:
+ * - Composition: Layout patterns (.flow, .grid, .cluster)
+ * - Utilities: Single-purpose classes (.text-center, .font-bold)
+ * - Blocks: Component styles (.card, .button)
+ * - Exceptions: State variations (add additional classes as needed)
+ * 
+ * BEM approach:
+ * - Blocks: Standalone components (.card)
+ * - Elements: Parts of blocks (.card__title, .card__image)
+ * - Modifiers: Variations (.card--featured)
+ * 
+ * ORGANIZATION:
+ * You may create additional CSS files if you prefer to separate:
+ * - Base styles and custom properties
+ * - Layout patterns
+ * - Components
+ * - Utilities
+ * 
+ * MODERN CSS FEATURES TO USE:
+ * - CSS nesting throughout
+ * - Custom properties for theming
+ * - color-mix() for color variations
+ * - Modern selectors (:is, :where, :has, :not)
+ * - Logical properties (margin-inline, padding-block)
+ * 
+ * REQUIREMENTS:
+ * 1. Define theme system with custom properties
+ * 2. Implement light and dark themes
+ * 3. Support prefers-color-scheme
+ * 4. Use color-mix() for color variations
+ * 5. Create responsive layout
+ * 6. Ensure accessibility (contrast, focus indicators, reduced motion)
+ * 7. Style all components and states
+ */
+
+/* Setting */ 
+:root {
+    --color-primary: #2A324B;
+    --color-secondary: #3f578a;
+    --color-background-primary: #E1E5EE;
+    --color-background-secondary: #C7CCDB;
+    --color-text: #2A324B;
+
+    --font-size-base: 1.25rem;
+    --multiplier: 1.35;
+    
+    --font-size-sm: var(--font-size-base) / var(--multiplier);
+    --font-size-md: var(--font-size-base);
+    --font-size-lg: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+    --font-size-xl: clamp(1.5rem, 3vw + 0.75rem, 2.5rem);
+    --font-size-2xl: clamp(2rem, 6vw + 1.25rem, 3rem);
+
+    --space-base: 1.25rem;
+    --space-sm: var(--space-base) / var(--multiplier);
+    --space-md: var(--space-base);
+    --space-lg: var(--space-base) * var(--multiplier);
+    --space-xl: var(--space-base) * var(--multiplier) * var(--multiplier);
+
+    --font-fam: sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #2A324B;
+        --color-secondary: #9faef7;
+        --color-background-primary: #40404c;
+        --color-background-secondary: #625F63;
+        --color-text: #cbcdfa;
+    }
+
+}
+
+.dark-theme {
+    --color-primary: #2A324B;
+    --color-secondary: #9faef7;
+    --color-background-primary: #40404c;
+    --color-background-secondary: #555561;
+    --color-text: #cbcdfa;
+}
+
+/* Elements */
+body {
+    background-color: var(--color-background-primary);
+    font-family: var(--font-fam);
+    color: var(--color-text);
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+}
+
+h2, h3 {
+    text-decoration: underline;
+    margin-block-start: var(--space-lg);
+}
+
+p {
+    font-size: var(--font-size-md);
+    margin-block-start: var(--space-sm);
+    padding-inline: var(--space-md);
+}
+
+main {
+    margin: var(--space-base);
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding-block: var(--space-md);
+    padding-inline: var(--space-md);
+    background-color: var(--color-background-secondary);
+    color: var(--color-secondary);
+    &:hover {
+        background-color: color-mix(in oklch, var(--color-background-secondary) 90%, black);
+    }
+}
+
+/* Objects */
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-block-end: solid var(--color-background-secondary);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.product-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-block: var(--space-md);
+}
+
+/* Components */
+.filters, .products, .hero {
+    margin-block-start: var(--space-md);
+}
+
+.product-card {
+    margin-block: var(--space-md);
+    margin-inline: var(--space-md);
+    padding: var(--space-sm);
+    background-color: var(--color-background-secondary);
+    border-radius: 5px;
+    img {
+        margin-block-start: var(--space-md);
+    }
+    .product-title {
+        text-decoration: none;
+        margin-block-start: var(--space-md);
+    }
+    .product-button {
+        background-color: var(--color-secondary);
+        color: var(--color-background-primary);
+        &:hover {
+            background-color: color-mix(in oklch, var(--color-secondary) 85%, black);
+        }
+    }
+}
+
+.filter-button {
+    &:focus {
+        border-inline-start: solid var(--color-secondary);
+    }
+}
+
+/* Utilities */
+.footer-text {
+    font-size: var(--font-size-sm);
+    justify-self: end;
+    padding-inline-end: var(--space-sm);
+    padding-block-end: var(--space-sm);
+}
+
+.product-price {
+    font-size: var(--font-size-md);
+}
+
+@media screen and (width >= 768px) {
+    .product-grid {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (width >= 1025px) {
+    .product-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
