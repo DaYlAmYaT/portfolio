@@ -1,0 +1,23 @@
+.btn-primary {
+  --bs-btn-bg: #1E3F5A;
+  --bs-btn-border-color: #1E3F5A;
+  --bs-btn-hover-bg: color-mix(in oklch, #1E3F5A 85%, white);
+  --bs-btn-hover-border-color: color-mix(in oklch, #1E3F5A 85%, white);
+  --bs-btn-focus-shadow-rgb: 64, 92, 115;
+}
+
+.navbar {
+  --bs-navbar-color: white;
+  --bs-navbar-brand-color: white;
+  --bs-navbar-hover-color: #C0C0C0;
+  --bs-navbar-brand-hover-color: #C0C0C0;
+}
+
+/* .navbar-brand {
+  &:hover {
+    color: #C0C0C0;
+  }
+  &:focus {
+    color: #C0C0C0;
+  }
+} */
