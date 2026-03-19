@@ -1,0 +1,63 @@
+/* --- Setup Styles --- */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+.spacer { height: 80vh; } /* Just to create scroll space */
+
+/* --- 1. The scroll() Property --- */
+/* This tracks the scroll position of the nearest scroll container (the body) */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: #38bdf8;
+  transform-origin: left;
+  
+  /* Link the animation to the scroll position */
+  animation: grow-progress linear;
+  animation-timeline: scroll(); 
+}
+
+@keyframes grow-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* --- 2. The view() Property --- */
+/* This tracks when the element enters the "view" of the scrollport */
+.reveal-box {
+  width: 300px;
+  height: 200px;
+  background: #818cf8;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: bold;
+
+  /* Link the animation to its visibility in the viewport */
+  animation: fade-and-scale linear forwards;
+  animation-timeline: view();
+  
+  /* Start animating when the top of the element hits the bottom of the screen,
+     Finish when the bottom of the element hits the top of the screen */
+  animation-range: entry 10% cover 50%; 
+}
+
+@keyframes fade-and-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
