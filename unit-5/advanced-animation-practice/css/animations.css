@@ -138,6 +138,5 @@
     .progress-bar, .card, .feature-section--left, .feature-section--right {
       animation: none;
       opacity: 1;
-      transform: none;
     }
 }
