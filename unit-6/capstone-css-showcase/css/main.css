@@ -1,11 +1,19 @@
+:root {
+  --court-green: #426534;
+  --court-blue: #305071;
+  --court-transition: #34567a;
+  
+}
+
+
 .court-svg {
-  background-color: #426534/* #305071 */;
+  background-color: var(--court-green);/* var(--court-blue) */;
   height: 100%;
   border-radius: 5px;
   stroke: white;
   stroke-width: 0.5px;
   .transition-area {
-    fill: #34567a;
+    fill: var(--court-transition);
   }
 
   .transition-highlight {
@@ -99,7 +107,7 @@
     transform-box: fill-box;
     transform-origin: center;
   }
-
+  z-index: 10;
   /* holes */
   .hole-up, .hole-down {
     transform: scale(0.9, 0.5);
@@ -364,6 +372,16 @@
       scale(0.35);
   }
 }
+
+.path-container {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  /* border-color: hotpink;
+  border-style: solid;
+  border-width: 2px; */
+}
+
 .serve-ball {
   width: 30px;
   position: absolute;
@@ -371,8 +389,25 @@
     translateX(-350px)
     translateY(-140px)
     scale(0.35);
-  animation: serve 2s ease-out infinite;
+  /* animation: serve 2s ease-out infinite; */
 }
+
+.path {
+  /* display: none; */
+  position: absolute;
+  fill: none;
+  stroke: rgb(182, 193, 197);
+  z-index: 5;
+}
+
+.bounce-marker {
+  fill: rgb(57, 57, 57);
+  z-index: 10;
+  transform: 
+    scale(1, 0.8);
+}
+
+
 @keyframes return {
   0%, 50% {
     transform: 
@@ -476,8 +511,10 @@
     translateX(-205px)
     translateY(80px)
     scale(0.8);
-  animation: return 3s ease-out infinite;
+  /* animation: return 3s ease-out infinite; */
 }
+  
+
 @keyframes third-shot {
   0%, 50% {
     transform: 
@@ -566,9 +603,10 @@
     translateX(-85px)
     translateY(-100px)
     scale(0.35);
-  animation: third-shot 3s ease-in infinite;
+  /* animation: third-shot 3s ease-in infinite; */
 }
-@supports (animation-timeline: view()) {
+
+/* @supports (animation-timeline: view()) {
   .serve-ball {
     animation: serve linear;
     animation-timeline: view();
@@ -584,4 +622,10 @@
     animation-timeline: view();
     animation-range: -10% 70% ;
   }
+} */
+
+.pickleball-path {
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
 }
