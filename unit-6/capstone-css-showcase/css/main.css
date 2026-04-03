@@ -2,11 +2,25 @@
   --court-green: #426534;
   --court-blue: #305071;
   --court-transition: #34567a;
-  
+  --scale-factor: 1;
 }
+
+@media (max-width: 450px) {
+  :root {
+    --scale-factor: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --scale-factor: 0.8;
+  }
+}
+
 
 .body {
   background-color: #222;
+  width: 100%;
 }
 
 .court-svg {
@@ -146,7 +160,8 @@
 
 .perspective-container {
   perspective: 1200px;
-  width: 100%;
+  margin: 0 auto;
+  width: 75%;
   height: 600px;
   display: flex;
   justify-content: center;
@@ -155,8 +170,8 @@
 }
 
 .court-3d {
-  width: 30vw;
-  height: 60vw;
+  width: calc(400px * var(--scale-factor));
+  height: calc(700px * var(--scale-factor));
   background-color: #3C638E;
   position: relative;
   transform: rotateX(70deg);
@@ -242,7 +257,7 @@
   transform: rotateX(-90deg) translateY(-65px);
   transform-origin: top;
   transform-style: preserve-3d;
-  z-index: 10;
+  z-index: 15;
 
   /* Net Post */
   &::after, &::before {
@@ -292,85 +307,85 @@
 @keyframes serve {
   0%, 50% {
     transform: 
-      translateX(-30px)
-      translateY(80px)
+      translateX(calc(-30px * var(--scale-factor)))
+      translateY(calc(90px * var(--scale-factor)))
       rotate(0deg);
   }
   52% {
     transform: 
-      translateX(-43px)
-      translateY(40px)
+      translateX(calc(-43px * var(--scale-factor)))
+      translateY(calc(50px * var(--scale-factor)))
       rotate(-250deg);
   }
   55% {
     transform: 
-      translateX(-65px)
-      translateY(0px)
+      translateX(calc(-65px * var(--scale-factor)))
+      translateY(calc(0px * var(--scale-factor)))
       rotate(-500deg)
       scale(0.9);
   }
   60% {
     transform: 
-      translateX(-100px)
-      translateY(-50px)
+      translateX(calc(-100px * var(--scale-factor)))
+      translateY(calc(-60px * var(--scale-factor)))
       rotate(-750deg)
       scale(0.8);
   }
   65% {
     transform: 
-      translateX(-125px)
-      translateY(-75px)
+      translateX(calc(-125px * var(--scale-factor)))
+      translateY(calc(-85px * var(--scale-factor)))
       rotate(-1000deg)
       scale(0.7);
   }
   70% {
     transform: 
-      translateX(-150px)
-      translateY(-95px)
+      translateX(calc(-150px * var(--scale-factor)))
+      translateY(calc(-105px * var(--scale-factor)))
       rotate(-1250deg)
       scale(0.65);
   }
   75% {
     transform: 
-      translateX(-175px)
-      translateY(-105px)
+      translateX(calc(-175px * var(--scale-factor)))
+      translateY(calc(-115px * var(--scale-factor)))
       rotate(-1500deg)
       scale(0.6);
   }
   /* peak */
   80% {
     transform: 
-      translateX(-200px)
-      translateY(-110px)
+      translateX(calc(-200px * var(--scale-factor)))
+      translateY(calc(-120px * var(--scale-factor)))
       rotate(-1750deg)
       scale(0.55);
   }
   85% {
     transform: 
-      translateX(-250px)
-      translateY(-108px)
+      translateX(calc(-250px * var(--scale-factor)))
+      translateY(calc(-115px * var(--scale-factor)))
       rotate(-2000deg)
       scale(0.5);
   }
   /* bounce */
   90% {
     transform: 
-      translateX(-300px)
-      translateY(-100px)
+      translateX(calc(-300px * var(--scale-factor)))
+      translateY(calc(-105px * var(--scale-factor)))
       rotate(-2250deg)
       scale(0.45);
   }
   95% {
     transform: 
-      translateX(-325px)
-      translateY(-130px)
+      translateX(calc(-325px * var(--scale-factor)))
+      translateY(calc(-135px * var(--scale-factor)))
       rotate(-2500deg)
       scale(0.4);
   }
   100% {
     transform: 
-      translateX(-350px)
-      translateY(-140px)
+      translateX(calc(-350px * var(--scale-factor)))
+      translateY(calc(-145px * var(--scale-factor)))
       rotate(-2750deg)
       scale(0.35);
   }
@@ -386,17 +401,17 @@
 }
 
 .serve-ball {
-  width: 30px;
+  width: calc(30px * var(--scale-factor)); 
   position: absolute;
   transform: 
-    translateX(-350px)
-    translateY(-140px)
+    translateX(calc(-350px * var(--scale-factor)))
+    translateY(calc(-140px * var(--scale-factor)))
     scale(0.35);
   animation: serve 2s ease-out infinite;
 }
 
 .path {
-  display: none;
+  /* display: none; */
   position: absolute;
   fill: none;
   stroke: rgb(182, 193, 197);
@@ -610,7 +625,7 @@
   animation: third-shot 3s ease-in infinite;
 }
 
-@supports (animation-timeline: view()) {
+/* @supports (animation-timeline: view()) {
   .serve-ball {
     animation: serve linear;
     animation-timeline: view();
@@ -626,7 +641,7 @@
     animation-timeline: view();
     animation-range: -10% 70% ;
   }
-}
+} */
 
 .pickleball-path {
   fill: none;
