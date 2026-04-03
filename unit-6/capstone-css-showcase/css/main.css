@@ -430,58 +430,58 @@
 @keyframes return {
   0%, 50% {
     transform: 
-      translateX(calc(-250px * var(--scale-factor)))
-      translateY(calc(-108px * var(--scale-factor)))
+      translateX(calc(-230px * var(--scale-factor)))
+      translateY(calc(-115px * var(--scale-factor)))
       rotate(0deg)
       scale(0.5);
   }
   /* serve bounce */
   55% {
     transform: 
-      translateX(calc(-300px * var(--scale-factor)))
-      translateY(calc(-100px * var(--scale-factor)))
+      translateX(calc(-280px * var(--scale-factor)))
+      translateY(calc(-105px * var(--scale-factor)))
       rotate(-250deg)
       scale(0.45);
   }
   60% {
     transform: 
-      translateX(calc(-325px * var(--scale-factor)))
-      translateY(calc(-130px * var(--scale-factor)))
+      translateX(calc(-315px * var(--scale-factor)))
+      translateY(calc(-135px * var(--scale-factor)))
       rotate(-500deg)
       scale(0.4);
   }
   /* return starts here */
   65% {
     transform: 
-      translateX(calc(-350px * var(--scale-factor)))
-      translateY(calc(-140px * var(--scale-factor)))
+      translateX(calc(-320px * var(--scale-factor)))
+      translateY(calc(-145px * var(--scale-factor)))
       rotate(-250deg)
       scale(0.35);
   }
   70% {
     transform: 
-      translateX(calc(-310px * var(--scale-factor)))
+      translateX(calc(-290px * var(--scale-factor)))
       translateY(calc(-130px * var(--scale-factor)))
       rotate(0deg)
       scale(0.4);
   }
   75% {
     transform: 
-      translateX(calc(-285px * var(--scale-factor)))
+      translateX(calc(-265px * var(--scale-factor)))
       translateY(calc(-110px * var(--scale-factor)))
       rotate(250deg)
       scale(0.5);
   }
   80% {
     transform: 
-      translateX(calc(-260px * var(--scale-factor)))
+      translateX(calc(-240px * var(--scale-factor)))
       translateY(calc(-60px * var(--scale-factor)))
       rotate(500deg)
       scale(0.6);
   }
   85% {
     transform: 
-      translateX(calc(-243px * var(--scale-factor)))
+      translateX(calc(-223px * var(--scale-factor)))
       translateY(calc(15px * var(--scale-factor)))
       rotate(750deg)
       scale(0.65);
@@ -489,35 +489,35 @@
   /* return bounce */
   90% {
     transform: 
-      translateX(calc(-240px * var(--scale-factor)))
+      translateX(calc(-220px * var(--scale-factor)))
       translateY(calc(80px * var(--scale-factor)))
       rotate(1000deg)
       scale(0.7);
   }
   93% {
     transform: 
-      translateX(calc(-230px * var(--scale-factor)))
+      translateX(calc(-210px * var(--scale-factor)))
       translateY(calc(73px * var(--scale-factor)))
       rotate(1250deg)
       scale(0.75);
   }
   95% {
     transform: 
-      translateX(calc(-225px * var(--scale-factor)))
+      translateX(calc(-205px * var(--scale-factor)))
       translateY(calc(70px * var(--scale-factor)))
       rotate(1500deg)
       scale(0.8);
   }
   97% {
     transform: 
-      translateX(calc(-215px * var(--scale-factor)))
+      translateX(calc(-195px * var(--scale-factor)))
       translateY(calc(73px * var(--scale-factor)))
       rotate(1750deg)
       scale(0.8);
   }
   100% {
     transform: 
-      translateX(calc(-205px * var(--scale-factor)))
+      translateX(calc(-195px * var(--scale-factor)))
       translateY(calc(80px * var(--scale-factor)))
       rotate(2750deg)
       scale(0.8);
