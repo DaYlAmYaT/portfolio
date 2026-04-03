@@ -5,6 +5,9 @@
   
 }
 
+.body {
+  background-color: #222;
+}
 
 .court-svg {
   background-color: var(--court-green);/* var(--court-blue) */;
@@ -152,8 +155,8 @@
 }
 
 .court-3d {
-  width: 400px;
-  height: 700px;
+  width: 30vw;
+  height: 60vw;
   background-color: #3C638E;
   position: relative;
   transform: rotateX(70deg);
@@ -389,11 +392,11 @@
     translateX(-350px)
     translateY(-140px)
     scale(0.35);
-  /* animation: serve 2s ease-out infinite; */
+  animation: serve 2s ease-out infinite;
 }
 
 .path {
-  /* display: none; */
+  display: none;
   position: absolute;
   fill: none;
   stroke: rgb(182, 193, 197);
@@ -401,6 +404,7 @@
 }
 
 .bounce-marker {
+  display: none;
   fill: rgb(57, 57, 57);
   z-index: 10;
   transform: 
@@ -511,7 +515,7 @@
     translateX(-205px)
     translateY(80px)
     scale(0.8);
-  /* animation: return 3s ease-out infinite; */
+  animation: return 3s ease-out infinite;
 }
   
 
@@ -603,10 +607,10 @@
     translateX(-85px)
     translateY(-100px)
     scale(0.35);
-  /* animation: third-shot 3s ease-in infinite; */
+  animation: third-shot 3s ease-in infinite;
 }
 
-/* @supports (animation-timeline: view()) {
+@supports (animation-timeline: view()) {
   .serve-ball {
     animation: serve linear;
     animation-timeline: view();
@@ -622,7 +626,7 @@
     animation-timeline: view();
     animation-range: -10% 70% ;
   }
-} */
+}
 
 .pickleball-path {
   fill: none;
