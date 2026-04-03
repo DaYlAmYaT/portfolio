@@ -430,197 +430,198 @@
 @keyframes return {
   0%, 50% {
     transform: 
-      translateX(-250px)
-      translateY(-108px)
+      translateX(calc(-250px * var(--scale-factor)))
+      translateY(calc(-108px * var(--scale-factor)))
       rotate(0deg)
       scale(0.5);
   }
   /* serve bounce */
   55% {
     transform: 
-      translateX(-300px)
-      translateY(-100px)
+      translateX(calc(-300px * var(--scale-factor)))
+      translateY(calc(-100px * var(--scale-factor)))
       rotate(-250deg)
       scale(0.45);
   }
   60% {
     transform: 
-      translateX(-325px)
-      translateY(-130px)
+      translateX(calc(-325px * var(--scale-factor)))
+      translateY(calc(-130px * var(--scale-factor)))
       rotate(-500deg)
       scale(0.4);
   }
   /* return starts here */
   65% {
     transform: 
-      translateX(-350px)
-      translateY(-140px)
+      translateX(calc(-350px * var(--scale-factor)))
+      translateY(calc(-140px * var(--scale-factor)))
       rotate(-250deg)
       scale(0.35);
   }
   70% {
     transform: 
-      translateX(-310px)
-      translateY(-130px)
+      translateX(calc(-310px * var(--scale-factor)))
+      translateY(calc(-130px * var(--scale-factor)))
       rotate(0deg)
       scale(0.4);
   }
   75% {
     transform: 
-      translateX(-285px)
-      translateY(-110px)
+      translateX(calc(-285px * var(--scale-factor)))
+      translateY(calc(-110px * var(--scale-factor)))
       rotate(250deg)
       scale(0.5);
   }
   80% {
     transform: 
-      translateX(-260px)
-      translateY(-60px)
+      translateX(calc(-260px * var(--scale-factor)))
+      translateY(calc(-60px * var(--scale-factor)))
       rotate(500deg)
       scale(0.6);
   }
   85% {
     transform: 
-      translateX(-243px)
-      translateY(15px)
+      translateX(calc(-243px * var(--scale-factor)))
+      translateY(calc(15px * var(--scale-factor)))
       rotate(750deg)
       scale(0.65);
   }
   /* return bounce */
   90% {
     transform: 
-      translateX(-240px)
-      translateY(80px)
+      translateX(calc(-240px * var(--scale-factor)))
+      translateY(calc(80px * var(--scale-factor)))
       rotate(1000deg)
       scale(0.7);
   }
   93% {
     transform: 
-      translateX(-230px)
-      translateY(73px)
+      translateX(calc(-230px * var(--scale-factor)))
+      translateY(calc(73px * var(--scale-factor)))
       rotate(1250deg)
       scale(0.75);
   }
   95% {
     transform: 
-      translateX(-225px)
-      translateY(70px)
+      translateX(calc(-225px * var(--scale-factor)))
+      translateY(calc(70px * var(--scale-factor)))
       rotate(1500deg)
       scale(0.8);
   }
   97% {
     transform: 
-      translateX(-215px)
-      translateY(73px)
+      translateX(calc(-215px * var(--scale-factor)))
+      translateY(calc(73px * var(--scale-factor)))
       rotate(1750deg)
       scale(0.8);
   }
   100% {
     transform: 
-      translateX(-205px)
-      translateY(80px)
+      translateX(calc(-205px * var(--scale-factor)))
+      translateY(calc(80px * var(--scale-factor)))
       rotate(2750deg)
       scale(0.8);
   }
 }
+
 .return-ball {
-  width: 30px;
+  width: calc(30px * var(--scale-factor));
   position: absolute;
   transform: 
-    translateX(-205px)
-    translateY(80px)
+    translateX(calc(-205px * var(--scale-factor))) 
+    translateY(calc(80px * var(--scale-factor))) 
     scale(0.8);
   animation: return 3s ease-out infinite;
 }
   
-
 @keyframes third-shot {
   0%, 50% {
     transform: 
-      translateX(-243px)
-      translateY(15px)
+      translateX(calc(-243px * var(--scale-factor)))
+      translateY(calc(15px * var(--scale-factor)))
       rotate(0deg)
       scale(0.65);
   }
   /* return bounce */
   55% {
     transform: 
-      translateX(-240px)
-      translateY(80px)
+      translateX(calc(-240px * var(--scale-factor)))
+      translateY(calc(80px * var(--scale-factor)))
       rotate(250deg)
       scale(0.7);
   }
   58% {
     transform: 
-      translateX(-230px)
-      translateY(73px)
+      translateX(calc(-230px * var(--scale-factor)))
+      translateY(calc(73px * var(--scale-factor)))
       rotate(500deg)
       scale(0.75);
   }
   60% {
     transform: 
-      translateX(-225px)
-      translateY(70px)
+      translateX(calc(-225px * var(--scale-factor)))
+      translateY(calc(70px * var(--scale-factor)))
       rotate(750deg)
       scale(0.8);
   }
   62% {
     transform: 
-      translateX(-215px)
-      translateY(73px)
+      translateX(calc(-215px * var(--scale-factor)))
+      translateY(calc(73px * var(--scale-factor)))
       rotate(850deg)
       scale(0.8);
   }
   /* third-shot starts here */
   65% {
     transform: 
-      translateX(-205px)
-      translateY(80px)
+      translateX(calc(-205px * var(--scale-factor)))
+      translateY(calc(80px * var(--scale-factor)))
       rotate(1000deg)
       scale(0.8);
   }
   70% {
     transform: 
-      translateX(-180px)
-      translateY(15px)
+      translateX(calc(-180px * var(--scale-factor)))
+      translateY(calc(15px * var(--scale-factor)))
       rotate(1250deg)
       scale(0.7);
   }
   75% {
     transform: 
-      translateX(-155px)
-      translateY(-40px)
+      translateX(calc(-155px * var(--scale-factor)))
+      translateY(calc(-40px * var(--scale-factor)))
       rotate(1750deg)
       scale(0.6);
   }
   80% {
     transform: 
-      translateX(-135px)
-      translateY(-70px)
+      translateX(calc(-135px * var(--scale-factor)))
+      translateY(calc(-70px * var(--scale-factor)))
       rotate(2000deg)
       scale(0.55);
   }
   83% {
     transform: 
-      translateX(-120px)
-      translateY(-80px)
+      translateX(calc(-120px * var(--scale-factor)))
+      translateY(calc(-80px * var(--scale-factor)))
       rotate(2250deg)
       scale(0.5);
   }
   87% {
     transform: 
-      translateX(-85px)
-      translateY(-100px)
+      translateX(calc(-85px * var(--scale-factor)))
+      translateY(calc(-100px * var(--scale-factor)))
       rotate(2500deg)
       scale(0.35);
   }
 }
+
 .third-shot {
-  width: 30px;
+  width: calc(30px * var(--scale-factor));
   position: absolute;
   transform: 
-    translateX(-85px)
-    translateY(-100px)
+    translateX(calc(-85px * var(--scale-factor))) 
+    translateY(calc(-100px * var(--scale-factor))) 
     scale(0.35);
   animation: third-shot 3s ease-in infinite;
 }
