@@ -7,374 +7,366 @@
   <link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
-  <section class="court-anatomy">
-    <div class="anatomy-legend">
-      <div class="legend-item" data-court-target="kitchen">
-        <h3 class="legend-title">THE KITCHEN (NVZ)</h3>
-        <p class="legend-desc">The Non-Volley Zone...</p>
-      </div>
-      <div class="legend-item" data-court-target="transition">
-        <h3 class="legend-title">THE TRANSITION ZONE</h3>
-        <p class="legend-desc">The way to get up to the kitchen...</p>
-      </div>
-      <div class="legend-item" data-court-target="baseline">
-        <h3 class="legend-title">BASELINE</h3>
-        <p class="legend-desc">The back boundary line...</p>
-      </div>
-      <div class="legend-item" data-court-target="sideline">
-        <h3 class="legend-title">SIDLINE</h3>
-        <p class="legend-desc">The side boundary line...</p>
-      </div>
+  <header>
+    <nav class="nav-container">
+      <a href="#" class="title">Kitchen Master</a>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#court-anatomy">Anatomy</a>
+        </li>
+        <li class="nav-item">
+          <a href="#rules">Rules</a>
+        </li>
+        <li class="nav-item" data-court-target="kitchen">
+          <a href="#">Paddles</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="court-anatomy">
+      <h1>Pickleball Court Anatomy</h1>
+      <section class="court-anatomy">
+        <div class="anatomy-legend">
+          <div class="legend-item" data-court-target="baseline">
+            <h3 class="legend-title">BASELINE</h3>
+          </div>
+          <div class="legend-item" data-court-target="transition">
+            <h3 class="legend-title">THE TRANSITION ZONE</h3>
+          </div>
+          <div class="legend-item" data-court-target="kitchen">
+            <h3 class="legend-title">THE KITCHEN (NVZ)</h3>
+          </div>
+          <div class="legend-item" data-court-target="sideline">
+            <h3 class="legend-title">SIDLINE</h3>
+          </div>
+        </div>
+
+        <svg class="court-svg" viewBox="0 0 60 110">
+          <!-- COURT AREA -->
+          <!-- transition zone area -->
+          <rect class="transition-area" x="10" y="10" width="40" height="90" />
+          <!-- kitchen area -->
+          <path class="kitchen" d="M 10 40 L 50 40 L 50 70 L 10 70 Z" />
+
+          <!-- MIDLINES -->
+          <!-- upper midline -->
+          <line class="line" x1="30" y1="10" x2="30" y2="40"/>
+          <!-- lower midline -->
+          <line class="line" x1="30" y1="70" x2="30" y2="100"/>
+
+          <!-- court line -->
+          <!-- kitchen lines -->
+          <path class="kitchen-highlight" d="M 10 40 L 50 40 L 50 70 L 10 70 Z" />
+          <!-- transition zone lines -->
+          <path class="transition-highlight" d="M 10 10 L 50 10 L 50 40 L 10 40 Z" />
+          <path class="transition-highlight" d="M 50 100 L 10 100 L 10 70 L 50 70 Z" />
+
+          <!-- BASELINES -->
+          <!-- upper court side baseline -->
+          <line class="baseline-highlight" x1="10" y1="10" x2="50" y2="10"/> 
+          <!-- lower court side baseline -->
+          <line class="baseline-highlight" x1="50" y1="100" x2="10" y2="100"/> 
+
+          <!-- SIDELINES -->
+          <!-- upper left sideline -->
+          <line class="sideline-highlight" x1="10" y1="10" x2="10" y2="40"/> 
+          <!-- upper right sideline -->
+          <line class="sideline-highlight" x1="50" y1="10" x2="50" y2="40"/> 
+          <!-- lower left sideline -->
+          <line class="sideline-highlight" x2="10" y2="70" x1="10" y1="100"/> 
+          <!-- lower right sideline -->
+          <line class="sideline-highlight" x2="50" y2="70" x1="50" y1="100"/> 
+
+          <!-- NET -->
+          <line class="net-line" x1="5" y1="55" x2="55" y2="55" />
+        </svg>
+      </section>
     </div>
-
-    <svg class="court-svg" viewBox="0 0 60 110">
-      <!-- COURT AREA -->
-      <!-- transition zone area -->
-      <rect class="transition-area" x="10" y="10" width="40" height="90" />
-      <!-- kitchen area -->
-      <path class="kitchen" d="M 10 40 L 50 40 L 50 70 L 10 70 Z" />
-
-      <!-- BASELINES -->
-      <!-- upper court side baseline -->
-      <line class="baseline-highlight" x1="10" y1="10" x2="50" y2="10"/> 
-      <!-- lower court side baseline -->
-      <line class="baseline-highlight" x1="50" y1="100" x2="10" y2="100"/> 
-
-      <!-- SIDELINES -->
-      <!-- upper left sideline -->
-      <line class="sideline-highlight" x1="10" y1="10" x2="10" y2="40"/> 
-      <!-- upper right sideline -->
-      <line class="sideline-highlight" x1="50" y1="10" x2="50" y2="40"/> 
-      <!-- lower left sideline -->
-      <line class="sideline-highlight" x2="10" y2="70" x1="10" y1="100"/> 
-      <!-- lower right sideline -->
-      <line class="sideline-highlight" x2="50" y2="70" x1="50" y1="100"/> 
-
-      <!-- MIDLINES -->
-      <!-- upper midline -->
-      <line class="line" x1="30" y1="10" x2="30" y2="40"/>
-      <!-- lower midline -->
-      <line class="line" x1="30" y1="70" x2="30" y2="100"/>
-
-      <!-- court line -->
-      <!-- kitchen lines -->
-      <path class="kitchen-highlight" d="M 10 40 L 50 40 L 50 70 L 10 70 Z" />
-      <!-- transition zone lines -->
-      <path class="transition-highlight" d="M 10 10 L 50 10 L 50 40 L 10 40 Z" />
-      <path class="transition-highlight" d="M 50 100 L 10 100 L 10 70 L 50 70 Z" />
-
-      <!-- NET -->
-      <line class="net-line" x1="5" y1="55" x2="55" y2="55" />
       
+    <section id="rules">
+      <h1>Pickleball Rules</h1>
+      <!-- serve rule -->
+      <div>
+        <h2>Serve Rule</h2>
+        <p>
+          The serve must be made underhand. The server must keep be behind the baseline when serving. The serve must be made into the <mark>diagonal</mark> transition zone.
+        </p>
+        <div class="perspective-container">
+          <div class="court-3d">
+            <div class="line baseline top"></div>
+            <div class="line baseline bottom"></div>
+            <div class="line sideline left"></div>
+            <div class="line sideline right"></div>
 
-    </svg>
-  </section>
-  <section>
-    <svg class="pickleball-ball" viewBox="0 0 100 100">
-      <defs>
-        <g id="hole-template">
-          <circle cx="0" cy="0" r="7" fill="#353d0c"/>
-        </g>
-      </defs>
+            <div class="kitchen-surface top-k-surface"></div>
+            <div class="kitchen-surface bottom-k-surface"></div>
 
-      <!-- pickleball color: #dfff00 -->
-      <circle cx="50" cy="50" r="48" fill="#dfff00" />
+            <div class="line kitchen-line top-k"></div>
+            <div class="line kitchen-line bottom-k"></div>
+            <div class="line midline top-m"></div>
+            <div class="line midline bottom-m"></div>
 
-      <!-- MIDDLE HOLES-->
-      <!-- center -->
-      <use href="#hole-template" x="50" y="50" />
-      <!-- top left -->
-      <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
-      <!-- top right -->
-      <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
-      <!-- bottom right -->
-      <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
-      <!-- bottom left -->
-      <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
+            <div class="net-container">
+              <div class="net-mesh"></div>
+              <div class="net-top-tape"></div>
+            </div>
+          </div>
+          <section>
+            <svg class="pickleball-ball serve-ball" viewBox="0 0 100 100">
+              <defs>
+                <g id="hole-template">
+                  <circle cx="0" cy="0" r="7" fill="#353d0c"/>
+                </g>
+              </defs>
+              <circle cx="50" cy="50" r="48" fill="#dfff00" />
+              <!-- MIDDLE HOLES-->
+              <!-- center -->
+              <use href="#hole-template" x="50" y="50" />
+              <!-- top left -->
+              <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
+              <!-- top right -->
+              <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
+              <!-- bottom right -->
+              <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
+              <!-- bottom left -->
+              <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
 
 
-      <!-- EDGES HOLES -->
-      <!-- top -->
-      <use href="#hole-template" x="55" y="15" class="hole-up" />
-      <!-- bottom -->
-      <use href="#hole-template" x="55" y="185" class="hole-down" />
-      <!-- left -->
-      <use href="#hole-template" x="15" y="55" class="hole-left" />
-      <!-- right -->
-      <use href="#hole-template" x="185" y="55" class="hole-right" />
-      <!-- top left -->
-      <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
-      <!-- top right -->
-      <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
-      <!-- bottom right -->
-      <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
-      <!-- bottom left -->
-      <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
-    </svg>
-  </section>
-
-  <!-- serve rule -->
-  <div class="perspective-container">
-    <div class="court-3d">
-      <div class="line baseline top"></div>
-      <div class="line baseline bottom"></div>
-      <div class="line sideline left"></div>
-      <div class="line sideline right"></div>
-
-      <div class="kitchen-surface top-k-surface"></div>
-      <div class="kitchen-surface bottom-k-surface"></div>
-
-      <div class="line kitchen-line top-k"></div>
-      <div class="line kitchen-line bottom-k"></div>
-      <div class="line midline top-m"></div>
-      <div class="line midline bottom-m"></div>
-
-      <div class="net-container">
-        <div class="net-mesh"></div>
-        <div class="net-top-tape"></div>
+              <!-- EDGES HOLES -->
+              <!-- top -->
+              <use href="#hole-template" x="55" y="15" class="hole-up" />
+              <!-- bottom -->
+              <use href="#hole-template" x="55" y="185" class="hole-down" />
+              <!-- left -->
+              <use href="#hole-template" x="15" y="55" class="hole-left" />
+              <!-- right -->
+              <use href="#hole-template" x="185" y="55" class="hole-right" />
+              <!-- top left -->
+              <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
+              <!-- top right -->
+              <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
+              <!-- bottom right -->
+              <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
+              <!-- bottom left -->
+              <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
+            </svg>
+          </section>
+          <!-- <section class="path-container">
+            <svg viewBox="0 0 400 300">
+              <circle class="bounce-marker" cx="115" cy="82" r="5" />
+              <path class="path" d="M 385 250 C 300 0 160 55 115 65 C 90 25 70 25 65 25" />
+            </svg>
+          </section> -->
+        </div>
       </div>
-    </div>
-    <section>
-      <svg class="pickleball-ball serve-ball" viewBox="0 0 100 100">
-        <!-- pickleball color: #dfff00 -->
-        <circle cx="50" cy="50" r="48" fill="#dfff00" />
 
-        <!-- MIDDLE HOLES-->
-        <!-- center -->
-        <use href="#hole-template" x="50" y="50" />
-        <!-- top left -->
-        <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
+      <!-- return rule -->
+      <div>
+        <h2>Return Rule</h2>
+        <p>The return must be made after the ball has <mark>bounced</mark> once on the transition zone. And the return can go towards to any side of the opponent's court.</p>
+        <div class="perspective-container">
+          <div class="court-3d">
+            <div class="line baseline top"></div>
+            <div class="line baseline bottom"></div>
+            <div class="line sideline left"></div>
+            <div class="line sideline right"></div>
+
+            <div class="kitchen-surface top-k-surface"></div>
+            <div class="kitchen-surface bottom-k-surface"></div>
+
+            <div class="line kitchen-line top-k"></div>
+            <div class="line kitchen-line bottom-k"></div>
+            <div class="line midline top-m"></div>
+            <div class="line midline bottom-m"></div>
+
+            <div class="net-container">
+              <div class="net-mesh"></div>
+              <div class="net-top-tape"></div>
+            </div>
+          </div>
+          <section>
+            <svg class="pickleball-ball return-ball" viewBox="0 0 100 100">
+              <!-- pickleball color: #dfff00 -->
+              <circle cx="50" cy="50" r="48" fill="#dfff00" />
+
+              <!-- MIDDLE HOLES-->
+              <!-- center -->
+              <use href="#hole-template" x="50" y="50" />
+              <!-- top left -->
+              <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
+              <!-- top right -->
+              <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
+              <!-- bottom right -->
+              <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
+              <!-- bottom left -->
+              <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
 
 
-        <!-- EDGES HOLES -->
-        <!-- top -->
-        <use href="#hole-template" x="55" y="15" class="hole-up" />
-        <!-- bottom -->
-        <use href="#hole-template" x="55" y="185" class="hole-down" />
-        <!-- left -->
-        <use href="#hole-template" x="15" y="55" class="hole-left" />
-        <!-- right -->
-        <use href="#hole-template" x="185" y="55" class="hole-right" />
-        <!-- top left -->
-        <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
-      </svg>
-    </section>
-    <section class="path-container">
-      <svg viewBox="0 0 400 300">
-        <circle class="bounce-marker" cx="115" cy="82" r="5" />
-        <path class="path" d="M 385 250 C 300 0 160 55 115 65 C 90 25 70 25 65 25" />
-      </svg>
-    </section>
-  </div>
-
-  <!-- return rule -->
-  <div class="perspective-container">
-    <div class="court-3d">
-      <div class="line baseline top"></div>
-      <div class="line baseline bottom"></div>
-      <div class="line sideline left"></div>
-      <div class="line sideline right"></div>
-
-      <div class="kitchen-surface top-k-surface"></div>
-      <div class="kitchen-surface bottom-k-surface"></div>
-
-      <div class="line kitchen-line top-k"></div>
-      <div class="line kitchen-line bottom-k"></div>
-      <div class="line midline top-m"></div>
-      <div class="line midline bottom-m"></div>
-
-      <div class="net-container">
-        <div class="net-mesh"></div>
-        <div class="net-top-tape"></div>
+              <!-- EDGES HOLES -->
+              <!-- top -->
+              <use href="#hole-template" x="55" y="15" class="hole-up" />
+              <!-- bottom -->
+              <use href="#hole-template" x="55" y="185" class="hole-down" />
+              <!-- left -->
+              <use href="#hole-template" x="15" y="55" class="hole-left" />
+              <!-- right -->
+              <use href="#hole-template" x="185" y="55" class="hole-right" />
+              <!-- top left -->
+              <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
+              <!-- top right -->
+              <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
+              <!-- bottom right -->
+              <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
+              <!-- bottom left -->
+              <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
+            </svg>
+          </section>
+          <!-- <section class="path-container">
+            <svg viewBox="0 0 400 300">
+              <circle class="bounce-marker" cx="150" cy="89" r="5" />
+              <path class="path" d="M 200 90 C 180 70 165 70 150 70 C 110 20 85 20 70 15 C 100 25 170 90 210 245" />
+            </svg>
+          </section> -->
+        </div>
       </div>
-    </div>
-    <section>
-      <svg class="pickleball-ball return-ball" viewBox="0 0 100 100">
-        <!-- pickleball color: #dfff00 -->
-        <circle cx="50" cy="50" r="48" fill="#dfff00" />
 
-        <!-- MIDDLE HOLES-->
-        <!-- center -->
-        <use href="#hole-template" x="50" y="50" />
-        <!-- top left -->
-        <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
+      <!-- third shot rule -->
+      <div>
+        <h2>Third Shot Rule</h2>
+        <p>
+          The third shot must be made after the ball has <mark>bounced</mark> once on the transition zone.
+        <div class="perspective-container">
+          <div class="court-3d">
+            <div class="line baseline top"></div>
+            <div class="line baseline bottom"></div>
+            <div class="line sideline left"></div>
+            <div class="line sideline right"></div>
+
+            <div class="kitchen-surface top-k-surface"></div>
+            <div class="kitchen-surface bottom-k-surface"></div>
+
+            <div class="line kitchen-line top-k"></div>
+            <div class="line kitchen-line bottom-k"></div>
+            <div class="line midline top-m"></div>
+            <div class="line midline bottom-m"></div>
+
+            <div class="net-container">
+              <div class="net-mesh"></div>
+              <div class="net-top-tape"></div>
+            </div>
+          </div>
+          <section>
+            <svg class="pickleball-ball third-shot" viewBox="0 0 100 100">
+              <!-- pickleball color: #dfff00 -->
+              <circle cx="50" cy="50" r="48" fill="#dfff00" />
+
+              <!-- MIDDLE HOLES-->
+              <!-- center -->
+              <use href="#hole-template" x="50" y="50" />
+              <!-- top left -->
+              <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
+              <!-- top right -->
+              <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
+              <!-- bottom right -->
+              <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
+              <!-- bottom left -->
+              <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
 
 
-        <!-- EDGES HOLES -->
-        <!-- top -->
-        <use href="#hole-template" x="55" y="15" class="hole-up" />
-        <!-- bottom -->
-        <use href="#hole-template" x="55" y="185" class="hole-down" />
-        <!-- left -->
-        <use href="#hole-template" x="15" y="55" class="hole-left" />
-        <!-- right -->
-        <use href="#hole-template" x="185" y="55" class="hole-right" />
-        <!-- top left -->
-        <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
-      </svg>
+              <!-- EDGES HOLES -->
+              <!-- top -->
+              <use href="#hole-template" x="55" y="15" class="hole-up" />
+              <!-- bottom -->
+              <use href="#hole-template" x="55" y="185" class="hole-down" />
+              <!-- left -->
+              <use href="#hole-template" x="15" y="55" class="hole-left" />
+              <!-- right -->
+              <use href="#hole-template" x="185" y="55" class="hole-right" />
+              <!-- top left -->
+              <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
+              <!-- top right -->
+              <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
+              <!-- bottom right -->
+              <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
+              <!-- bottom left -->
+              <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
+            </svg>
+          </section>
+          
+          <!-- <section class="path-container">
+            <svg viewBox="0 0 400 300">
+              <circle class="bounce-marker" cx="175" cy="315" r="5" />
+              <path class="path" d="M 170 180 C 170 185 180 180 175 250 C 185 230 195 230 210 235 C 240 120 300 70 330 65" />
+            </svg>
+          </section> -->
+        </div>
+      </div>  
     </section>
-    <section class="path-container">
-      <svg viewBox="0 0 400 300">
-        <circle class="bounce-marker" cx="150" cy="89" r="5" />
-        <path class="path" d="M 200 90 C 180 70 165 70 150 70 C 110 20 85 20 70 15 C 100 25 170 90 210 245" />
-      </svg>
-    </section>
-  </div>
 
-  <!-- third shot rule -->
-  <div class="perspective-container">
-    <div class="court-3d">
-      <div class="line baseline top"></div>
-      <div class="line baseline bottom"></div>
-      <div class="line sideline left"></div>
-      <div class="line sideline right"></div>
 
-      <div class="kitchen-surface top-k-surface"></div>
-      <div class="kitchen-surface bottom-k-surface"></div>
 
-      <div class="line kitchen-line top-k"></div>
-      <div class="line kitchen-line bottom-k"></div>
-      <div class="line midline top-m"></div>
-      <div class="line midline bottom-m"></div>
 
-      <div class="net-container">
-        <div class="net-mesh"></div>
-        <div class="net-top-tape"></div>
+
+    <!-- more space delete later -->
+    <div class="perspective-container">
+      <div class="court-3d">
+        <div class="line baseline top"></div>
+        <div class="line baseline bottom"></div>
+        <div class="line sideline left"></div>
+        <div class="line sideline right"></div>
+
+        <div class="kitchen-surface top-k-surface"></div>
+        <div class="kitchen-surface bottom-k-surface"></div>
+
+        <div class="line kitchen-line top-k"></div>
+        <div class="line kitchen-line bottom-k"></div>
+        <div class="line midline top-m"></div>
+        <div class="line midline bottom-m"></div>
+
+        <div class="net-container">
+          <div class="net-mesh"></div>
+          <div class="net-top-tape"></div>
+        </div>
       </div>
+      <section>
+        <svg class="pickleball-ball third-shot" viewBox="0 0 100 100">
+          <!-- pickleball color: #dfff00 -->
+          <circle cx="50" cy="50" r="48" />
+
+          <!-- MIDDLE HOLES-->
+          <!-- center -->
+          <use href="#hole-template" x="50" y="50" />
+          <!-- top left -->
+          <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
+          <!-- top right -->
+          <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
+          <!-- bottom right -->
+          <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
+          <!-- bottom left -->
+          <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
+
+
+          <!-- EDGES HOLES -->
+          <!-- top -->
+          <use href="#hole-template" x="55" y="15" class="hole-up" />
+          <!-- bottom -->
+          <use href="#hole-template" x="55" y="185" class="hole-down" />
+          <!-- left -->
+          <use href="#hole-template" x="15" y="55" class="hole-left" />
+          <!-- right -->
+          <use href="#hole-template" x="185" y="55" class="hole-right" />
+          <!-- top left -->
+          <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
+          <!-- top right -->
+          <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
+          <!-- bottom right -->
+          <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
+          <!-- bottom left -->
+          <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
+        </svg>
+      </section>
     </div>
-    <section>
-      <svg class="pickleball-ball third-shot" viewBox="0 0 100 100">
-        <!-- pickleball color: #dfff00 -->
-        <circle cx="50" cy="50" r="48" fill="#dfff00" />
-
-        <!-- MIDDLE HOLES-->
-        <!-- center -->
-        <use href="#hole-template" x="50" y="50" />
-        <!-- top left -->
-        <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
-
-
-        <!-- EDGES HOLES -->
-        <!-- top -->
-        <use href="#hole-template" x="55" y="15" class="hole-up" />
-        <!-- bottom -->
-        <use href="#hole-template" x="55" y="185" class="hole-down" />
-        <!-- left -->
-        <use href="#hole-template" x="15" y="55" class="hole-left" />
-        <!-- right -->
-        <use href="#hole-template" x="185" y="55" class="hole-right" />
-        <!-- top left -->
-        <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
-      </svg>
-    </section>
-    
-    <section class="path-container">
-      <svg viewBox="0 0 400 300">
-        <circle class="bounce-marker" cx="175" cy="315" r="5" />
-        <path class="path" d="M 170 180 C 170 185 180 180 175 250 C 185 230 195 230 210 235 C 240 120 300 70 330 65" />
-      </svg>
-    </section>
-  </div>
-
-
-
-
-
-
-  <!-- more space delete later -->
-  <div class="perspective-container">
-    <div class="court-3d">
-      <div class="line baseline top"></div>
-      <div class="line baseline bottom"></div>
-      <div class="line sideline left"></div>
-      <div class="line sideline right"></div>
-
-      <div class="kitchen-surface top-k-surface"></div>
-      <div class="kitchen-surface bottom-k-surface"></div>
-
-      <div class="line kitchen-line top-k"></div>
-      <div class="line kitchen-line bottom-k"></div>
-      <div class="line midline top-m"></div>
-      <div class="line midline bottom-m"></div>
-
-      <div class="net-container">
-        <div class="net-mesh"></div>
-        <div class="net-top-tape"></div>
-      </div>
-    </div>
-    <section>
-      <svg class="pickleball-ball third-shot" viewBox="0 0 100 100">
-        <!-- pickleball color: #dfff00 -->
-        <circle cx="50" cy="50" r="48" />
-
-        <!-- MIDDLE HOLES-->
-        <!-- center -->
-        <use href="#hole-template" x="50" y="50" />
-        <!-- top left -->
-        <use href="#hole-template" x="55" y="30" class="hole-middle-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="12" y="73" class="hole-middle-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="125" y="25" class="hole-middle-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-58" y="80" class="hole-middle-bl" />
-
-
-        <!-- EDGES HOLES -->
-        <!-- top -->
-        <use href="#hole-template" x="55" y="15" class="hole-up" />
-        <!-- bottom -->
-        <use href="#hole-template" x="55" y="185" class="hole-down" />
-        <!-- left -->
-        <use href="#hole-template" x="15" y="55" class="hole-left" />
-        <!-- right -->
-        <use href="#hole-template" x="185" y="55" class="hole-right" />
-        <!-- top left -->
-        <use href="#hole-template" x="58" y="0" class="hole-edge-tl" />
-        <!-- top right -->
-        <use href="#hole-template" x="85" y="80" class="hole-edge-tr" />
-        <!-- bottom right -->
-        <use href="#hole-template" x="227" y="0" class="hole-edge-br" />
-        <!-- bottom left -->
-        <use href="#hole-template" x="-85" y="80" class="hole-edge-bl" />
-      </svg>
-    </section>
-  </div>
+  </main>
 </body>
 </html>
